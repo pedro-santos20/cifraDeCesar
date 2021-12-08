@@ -1,8 +1,8 @@
-var encodeBtn = document.getElementById("button-encode");
-var decodeBtn = document.getElementById("button-decode");
+let encodeBtn = document.getElementById("button-encode");
+let decodeBtn = document.getElementById("button-decode");
 
-var texto = document.getElementById("message");
-var chave = document.getElementById("offset");
+let texto = document.getElementById("message");
+let chave = document.getElementById("offset");
 
 encodeBtn.addEventListener("click", () => {
   localStorage.setItem("message", cipherEncode(texto.value, parseInt(chave.value)))
@@ -14,50 +14,50 @@ decodeBtn.addEventListener("click", () => {
   window.location = "./message.html"
 });
 
-function criptografia(texto, chave) {
-  var criptoArray = [];
-  var cripto = "";
+function cipherEncode(texto, chave) {
+  let codificaArray = [];
+  let cripto = "";
 
-  for (var i in texto) {
-    criptoArray.push(texto[i].charCodeAt());
-    if (criptoArray[i] >= 65 && criptoArray[i] <= 90) {
-      var contadorCesar = ((criptoArray[i] - 65 + (chave % 26) + 26) % 26) + 65;
-      cripto += String.fromCharCode(contadorCesar);
+  for (let i in texto) {
+    codificaArray.push(texto[i].charCodeAt());
+    if (codificaArray[i] >= 65 && codificaArray[i] <= 90) {
+      let contaCripto = ((codificaArray[i] - 65 + (chave % 26) + 26) % 26) + 65;
+      cripto += String.fromCharCode(contaCripto);
     }
-    else if (criptoArray[i] >= 97 && criptoArray[i] <= 122) {
-      var contadorCesar = ((criptoArray[i] - 97 + (chave % 26) + 26) % 26) + 97;
-      cripto += String.fromCharCode(contadorCesar);
+    else if (codificaArray[i] >= 97 && codificaArray[i] <= 122) {
+      let contaCripto = ((codificaArray[i] - 97 + (chave % 26) + 26) % 26) + 97;
+      cripto += String.fromCharCode(contaCripto);
     }
     else {
-      cripto += String.fromCharCode(criptoArray[i])
+      cripto += String.fromCharCode(codificaArray[i])
     }
   }
   return cripto
 }
 
-function descriptografia(texto, chave)
-var descriptoArray = [];
-var cripto = "";
-var contadorCesar = "";
-for (var j in texto) {
-  decodificaArray.push(texto[j].charCodeAt());
-  if (decodificaArray[j] >= 65 && decodificaArray[j] <= 90) {
-    contadorCesar = ((decodificaArray[j] - 65 - (chave % 26) + 26) % 26) + 65;
-    cripto += String.fromCharCode(contadorCesar);
+function cipherDecode(texto, chave) {
+  let decodificaArray = [];
+  let cripto = "";
+  let contaCripto = "";
+  
+  for (let j in texto) {
+    decodificaArray.push(texto[j].charCodeAt());
+    if (decodificaArray[j] >= 65 && decodificaArray[j] <= 90) {
+      contaCripto = ((decodificaArray[j] - 65 - (chave % 26) + 26) % 26) + 65;
+      cripto += String.fromCharCode(contaCripto);
+    }
+    else if (decodificaArray[j] >= 97 && decodificaArray[j] <= 122) {
+      let contaCripto = ((decodificaArray[j] - 97 - (chave % 26) + 26) % 26) + 97;
+      cripto += String.fromCharCode(contaCripto);
+    }
+    else {
+      cripto += String.fromCharCode(decodificaArray[j])
+    }
   }
-  else if (decodeArray[j] >= 97 && decodificaArray[j] <= 122) {
-    var contadorCesar = ((decodificaArray[j] - 97 - (chave % 26) + 26) % 26) + 97;
-    cripto += String.fromCharCode(contadorCesar);
-  }
-  else {
-    cripto += String.fromCharCode(decodificaArray[j])
-  }
+  return cripto
 }
-return cripto
 
 function printMessage(getFunction) {
 
   document.getElementById("final-message").innerHTML = getFunction(texto, chave)
 }
-
-

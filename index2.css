@@ -1,0 +1,56 @@
+body {
+    background-image: url("http://taby.com.br/softwaresul/wp-content/uploads/2020/07/1_3s-Y-LJ6zzj8Jwsay3uO9A-1200x600.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 25px;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 20px 10px;
+    color: #fff;
+  }
+  
+  .card {
+    background: none;
+  }
+  
+  .card-body {
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif, arial;
+    color: #fff;
+  }
+  
+  .textarea-style {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+  
+  .offset-style{
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+  
+  .estiloBtn {
+    margin-left: 30%;
+    margin-right: 30%;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif, arial;
+    color: #0babeb;
+  }
+  
+  .radios {
+    color: #0babeb;
+  }
+  
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+  }

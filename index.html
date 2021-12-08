@@ -10,6 +10,11 @@
 </head>
 
 <body>
+  <header>
+    <div class="header">
+      <h1>Codificador - Cifra de César</h1>
+    </div>
+  </header>
   <main>
     <section class="card">
       <h1 class="card-body">
@@ -19,7 +24,7 @@
         <textarea id="message" class="form-control textarea-style"></textarea>
       </div>
       <h1 class="card-body">
-        Digite a chave de codificação ou decodificação
+        Digite a quantidade de passos
       </h1>
       <div class="input-group mb-3">
         <input type="number" id="offset" class="form-control offset-style">
@@ -28,9 +33,11 @@
       <button type="button" id="button-decode" class="estiloBtn btn avisoBtn">Decodificar</button>
     </section>
   </main>
-  <script src="message.js"></script>
+  <footer>
+    <p class="rodape">Projeto 1 - Módulo II - Resilia <br> Pedro Santos - 2021</p>
+  </footer>
+  <script src="./message.js"></script>
   <script src="./cesar.js"></script>
-  <script src="./base64.js"></script>
 </body>
 
 </html>
